@@ -1,13 +1,17 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {enableProdMode} from '@angular/core';
-import {Material2AppAppComponent, environment} from './app/';
+import {enableProdMode, coreBootstrap, ReflectiveInjector} from '@angular/core';
+import {environment} from './app/';
+import {BROWSER_APP_PROVIDERS, browserPlatform} from '@angular/platform-browser';
 import {HTTP_PROVIDERS} from '@angular/http';
+import {Material2AppAppComponentNgFactory} from './app/material2-app.component.ngfactory';
 
 
 if (environment.production) {
   enableProdMode();
 }
 
-bootstrap(Material2AppAppComponent, [
-  HTTP_PROVIDERS,
-]);
+let providers = [
+  BROWSER_APP_PROVIDERS,
+];
+
+const appInjector = ReflectiveInjector.resolveAndCreate(providers, browserPlatform().injector);
+coreBootstrap(Material2AppAppComponentNgFactory, appInjector);

@@ -10,14 +10,21 @@
     "noEmitOnError": true,
     "noImplicitAny": false,
     "outDir": "../dist/",
-    "rootDir": ".",
+    "rootDirs": [
+      ".",
+      "../node_modules"
+    ],
     "sourceMap": true,
     "target": "es5",
     "inlineSources": true
   },
-
+  "angularCompilerOptions": {
+    "genDir": "../dist",
+    "debug": true
+  },
   "files": [
     "main.ts",
-    "typings.d.ts"
+    "typings.d.ts",
+    "../node_modules/@angular2-material/core/annotations/field-value.d.ts"
   ]
 }

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
+import {MdUniqueSelectionDispatcher} from '@angular2-material/core';
 import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
 import {MD_TOOLBAR_DIRECTIVES} from '@angular2-material/toolbar';
 import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 import {MD_CHECKBOX_DIRECTIVES} from '@angular2-material/checkbox';
-import {MD_RADIO_DIRECTIVES, MdRadioDispatcher} from '@angular2-material/radio';
+import {MD_RADIO_DIRECTIVES} from '@angular2-material/radio';
 import {MD_PROGRESS_CIRCLE_DIRECTIVES} from '@angular2-material/progress-circle';
 import {MD_PROGRESS_BAR_DIRECTIVES} from '@angular2-material/progress-bar';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
@@ -17,8 +19,9 @@ import {MD_TABS_DIRECTIVES} from '@angular2-material/tabs';
   selector: 'material2-app-app',
   templateUrl: 'material2-app.component.html',
   styleUrls: ['material2-app.component.css'],
-  providers: [MdRadioDispatcher, MdIconRegistry],
+  providers: [MdUniqueSelectionDispatcher],
   directives: [
+    NgFor,
     MD_SIDENAV_DIRECTIVES,
     MD_CARD_DIRECTIVES,
     MD_TOOLBAR_DIRECTIVES,
@@ -29,7 +32,7 @@ import {MD_TABS_DIRECTIVES} from '@angular2-material/tabs';
     MD_INPUT_DIRECTIVES,
     MD_LIST_DIRECTIVES,
     MD_PROGRESS_BAR_DIRECTIVES,
-    MD_ICON_DIRECTIVES,
+    //MD_ICON_DIRECTIVES,
     MD_TABS_DIRECTIVES,
   ],
 })

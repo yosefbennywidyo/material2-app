@@ -3,5 +3,7 @@ set -ex
 
 for package in ~/material2/deploy/*
 do
-  npm install ${package}
+  if [ -f ${package}/package.json ]; then
+    npm install ${package}
+  fi
 done

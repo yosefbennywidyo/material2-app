@@ -121,6 +121,12 @@
       <button md-menu-item>Banana</button>
     </md-menu>
 
+    <md-card>
+      <p>Last dialog result: {{lastDialogResult}}</p>
+      <button md-raised-button (click)="openDialog()">DIALOG</button>
+      <button md-raised-button (click)="showSnackbar()">SNACKBAR</button>
+    </md-card>
+
   </div>
 
 </md-sidenav-layout>
